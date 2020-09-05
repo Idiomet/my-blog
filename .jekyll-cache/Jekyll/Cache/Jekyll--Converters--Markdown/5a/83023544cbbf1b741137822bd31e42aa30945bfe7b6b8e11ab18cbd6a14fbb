@@ -1,0 +1,10 @@
+I"<h1 id="intro-on-git">Intro on Git</h1>
+<p>Hello, my name is Josh Castillo and I will be going over Git and how it can be useful for projects and also go over basic Git commands based on notes I wrote down from the GitHub docs page and YouTube videos on how to use Git and GitHub. This will also serve as another purpose of solidifying my knowledge on these two subjects.</p>
+
+<p>But first, let me give you an introduction on what Git allows you to do. So, Git is a Version Control System for tracking changes made in files. It tracks these changes by taking snapshots or a <code class="language-plaintext highlighter-rouge">commit</code> of files. It’s an incredibly useful tool for projects because it allows project members to see what exactly was changed in the code and even create their branches from the main code, to create new features, before merging it back into the main branch. The main branch will always have your 100% working clean code, there’s a reason why they call it the master branch. Where GitHub comes into play is when you want to upload your local repository into a remote repository such as GitHub or BitBucket.</p>
+
+<h1 id="git-commands">Git commands</h1>
+<p><code class="language-plaintext highlighter-rouge">git init</code></p>
+
+<h1 id="github-commands">GitHub commands</h1>
+:ET
