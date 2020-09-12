@@ -1,0 +1,21 @@
+I"	<h2 id="intro-on-docker">Intro on Docker</h2>
+<p>Hello, in today’s blog post, I’m going to be going over Docker. Docker is an incredibly useful tool to quickly deploy applications in an isolated environment with very little computing resource overhead. Docker uses the host’s operating system resources to create containerized applications. Docker is a bit similar to virtual machines because they both virtualize a layer of a computer. Virtual machines virtualize the hardware layer of a computer, while Docker virtualizes the operating system layer of a computer. By virtualizing the operating system layer, it allows whatever applications or containers that’s run on Docker to be run on any host operating system without any trouble. This also allows for easy sharing to project team members just as long as they have Docker installed as well.</p>
+
+<h2 id="download-for-docker-on-windows">Download for Docker on Windows</h2>
+<p>https://download.docker.com/win/stable/Docker%20Desktop%20Installer.exe</p>
+
+<h2 id="download-for-docker-on-mac">Download for Docker on Mac</h2>
+<p>https://download.docker.com/mac/stable/Docker.dmg</p>
+
+<p>After downloading and installing Docker for your appropriate operating system, we are going to test if Docker is properly installed by running the command <code class="language-plaintext highlighter-rouge">docker --version</code>. This command is a smoke test to see if the installation was successful and the output of the command will display what version of Docker you will be using.</p>
+
+<h2 id="creating-an-nginx-container-using-docker">Creating an nginx Container using Docker</h2>
+<p>Next, I will be going over how to build an nginx image from a Dockerfile.</p>
+<ol>
+  <li>Create a new folder in your Documents folder and name it “nginx”, that way we can stay organized.</li>
+  <li>Within that folder you just created, create a directory and name it “html-directory”. In here we will input html, css, and javascript files that we want to display using the web server.</li>
+  <li>Create a blank new file named “Dockerfile”. In the Dockerfile, input the below text:<br />
+ <code class="language-plaintext highlighter-rouge">FROM nginx</code><br />
+ <code class="language-plaintext highlighter-rouge">COPY html-directory /usr/share/nginx/html</code></li>
+</ol>
+:ET
