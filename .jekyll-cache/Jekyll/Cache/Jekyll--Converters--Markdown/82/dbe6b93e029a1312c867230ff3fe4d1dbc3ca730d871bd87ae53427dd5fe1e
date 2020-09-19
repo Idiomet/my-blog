@@ -1,0 +1,26 @@
+I"�<h2 id="intro-on-aws-ec2-instances">Intro on AWS EC2 Instances</h2>
+
+<!-- Brief Intro -->
+<p>Today, I will be going over how to launch an incredibly useful service from Amazon Web Services, which are EC2 instances. EC2 instances allow you to deploy virtual servers in the cloud, backed with Amazon’s reliable network infrastructure and fast speeds. Because of EC2’s scalability, you can increase or decrease your computing needs on demand within minutes. With a 99.99% guaranteed uptime, you can expect to rely on EC2 instances from a day to day basis. In addition to near 24/7 uptime, Amazon allows you to configure your EC2 computing instance to however you like with various CPU, storage, network, and operating system options to choose from. In terms of security of EC2 instances, they are supported by the AWS Nitro System which offloads many of the virtualization resources to dedicated hardware and software, which minimizes the total number of entry points an attacker can target.</p>
+
+<!-- Use Cases -->
+<h2 id="ec2-use-cases">EC2 Use Cases</h2>
+<ul>
+  <li>Hosting web servers or application servers</li>
+  <li>Running CPU-intensive tasks such as machine learning</li>
+  <li>Hosting a server close to a majority of your target customers to reduce latency and achieve maximum network speed</li>
+  <li>Ensuring your website doesn’t go down after deploying your large-scale advertising campaign</li>
+  <li>Hosting a database server that requires high read/write throughput</li>
+</ul>
+
+<h2 id="how-to-configure-and-launch-an-ec2-instance">How to Configure and Launch an EC2 Instance</h2>
+<ol>
+  <li>Create an AWS account and sign in.</li>
+  <li>
+    <p>In the AWS Management console, select the region from the dropdown menu, and choose the region you want to launch your EC2 instance in. Choose a region that’s closest to your target audience/customers.</p>
+
+    <p><img src="../assets/region.jpg" alt="AWS Region" /></p>
+  </li>
+</ol>
+
+:ET

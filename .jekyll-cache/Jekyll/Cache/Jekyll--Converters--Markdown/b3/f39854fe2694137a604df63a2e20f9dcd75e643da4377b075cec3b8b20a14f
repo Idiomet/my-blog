@@ -1,3 +1,0 @@
-I"@<h2 id="intro-on-docker">Intro on Docker</h2>
-<p>Hello, in today’s blog post I’m going to be going over Docker. Docker is an incredibly useful tool to quickly deploy applications in an isolated environment with very little computing resource overhead. Docker uses the host’s operating system resources to create containerized applications. Docker is a bit similar to virtual machines, because they both virtualize a layer of a computer. Virtual machines virtualize the hardware layer of a computer, while Docker virtualizes the operating system layer of a computer.</p>
-:ET
