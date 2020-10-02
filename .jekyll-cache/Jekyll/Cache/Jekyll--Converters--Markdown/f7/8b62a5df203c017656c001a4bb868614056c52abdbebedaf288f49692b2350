@@ -1,5 +1,0 @@
-I"W<h2 id="intro-on-http-messages">Intro on HTTP Messages</h2>
-<p>HTTP messages are how a server and a client can communicate data with each other. A server is a remote computer providing data, while a client is a local computer requesting data from the server.</p>
-
-<p>There are two types of HTTP messages, which are requests and responses.</p>
-:ET
