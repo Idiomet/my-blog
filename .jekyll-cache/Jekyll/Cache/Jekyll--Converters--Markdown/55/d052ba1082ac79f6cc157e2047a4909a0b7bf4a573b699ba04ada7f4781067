@@ -1,0 +1,39 @@
+I"S	<h2 id="how-to-setup-samba-as-a-file-server-using-ubuntu">How to setup Samba as a file server using Ubuntu</h2>
+<p>You may be wondering what is Samba? Samba is a software package that provides stable and fast file, folder, and printer sharing between Windows and Linux computers. It can also act as a domain controller just like Active Directory which handles authentication requests on a domain. It is useful for a corporate network to quickly and easily share sensitive files and folders between users on the local network, without risk of exposure to the outside world.</p>
+
+<h2 id="create-ubuntu-container-using-docker">Create Ubuntu container using Docker</h2>
+<ol>
+  <li>Download Ubuntu 18.04 image.
+<code class="language-plaintext highlighter-rouge">docker pull ubuntu:18.04</code></li>
+  <li>Create Ubuntu container.
+<code class="language-plaintext highlighter-rouge">docker run -it -p 139:139 -p 445:446 -d ubuntu:18.04 -p</code></li>
+  <li>Run bash within Ubuntu container.
+<code class="language-plaintext highlighter-rouge">docker exec -it CONTAINER_NAME_HERE bash</code></li>
+</ol>
+
+<h2 id="setup-samba">Setup Samba</h2>
+<ol>
+  <li>Update the list of available packages and upgrade to any new packages.
+<code class="language-plaintext highlighter-rouge">apt-get update &amp;&amp; apt-get upgrade</code></li>
+  <li>Install Samba package.
+<code class="language-plaintext highlighter-rouge">apt install samba</code></li>
+  <li>Install vim text editor.
+<code class="language-plaintext highlighter-rouge">apt install nano</code></li>
+  <li>Open /etc/samba/smb.conf with nano.
+<code class="language-plaintext highlighter-rouge">nano /etc/samba/smb.conf</code></li>
+  <li>Add this to the bottom of the file.
+<code class="language-plaintext highlighter-rouge">[share]
+ comment = Ubuntu File Server Share
+ path = /srv/samba/share
+ browsable = yes
+ guest ok = yes
+ read only = no
+ create mask = 0755</code></li>
+  <li>Create the directory path for sharing.
+<code class="language-plaintext highlighter-rouge">mkdir -p /srv/samba/share</code></li>
+  <li>Modify the permissions of that directory path.
+<code class="language-plaintext highlighter-rouge">chown nobody:nogroup /srv/samba/share</code></li>
+  <li>Restart the samba service to allow the new configuration to work.
+<code class="language-plaintext highlighter-rouge">systemctl restart smbd.service nmbd.service</code></li>
+</ol>
+:ET
