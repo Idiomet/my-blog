@@ -1,3 +1,0 @@
-I"I<h2 id="intro-on-ansible">Intro on Ansible</h2>
-<p>So first off, what is Ansible? It is an extremely useful tool to automate the process of managing servers at scale. No programming is necessary to learn how to use Ansible, because Ansible has built in modules that will do all the heavy programming for you. All that’s needed for Ansible to work is for the control node to have SSH and Python installed. The host machines only need SSH installed, for Ansible to work properly. What’s also great is that Ansible works with any operating system such as Linux, Windows, and Mac.</p>
-:ET

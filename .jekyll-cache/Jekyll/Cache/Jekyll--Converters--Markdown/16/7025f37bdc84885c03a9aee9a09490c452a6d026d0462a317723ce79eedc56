@@ -1,0 +1,50 @@
+I"]<h2 id="intro-on-terraform">Intro on Terraform</h2>
+<p>Let me give you a brief introduction on Terraform and then later on I will give over how to automate the deployment of two AWS servers using Terraform. Terraform is a free and open-source tool that allows you to automate and manage infrastructure such as web servers or database servers with different cloud providers. These providers include AWS, Azure, and Google Cloud. The great thing about Terraform is that it is just like Ansible, where it uses a declarative language. You specify your desired end result and Terraform will automatically figure out the steps in between to achieve that end result. Essentially, this allows you to create a blueprint of what you want your infrastructure to be. Another great thing about Terraform is that before your infrastructure is created, it will create an execution plan, which will create a preview of what changes will be made. Next, I’ll be going over how to install Terraform on Ubuntu.</p>
+
+<h2 id="installing-terraform-on-ubuntu">Installing Terraform on Ubuntu</h2>
+<ol>
+  <li>Add the HashiCorp GPG key.
+<code class="language-plaintext highlighter-rouge">curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -</code></li>
+  <li>Add the HashiCorp repo.
+<code class="language-plaintext highlighter-rouge">sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"</code></li>
+  <li>Update list of packages and install Terraform.
+<code class="language-plaintext highlighter-rouge">sudo apt-get update &amp;&amp; sudo apt-get install terraform</code></li>
+  <li>Verify if terraform was properly installed.
+<code class="language-plaintext highlighter-rouge">terraform - help</code></li>
+</ol>
+
+<h2 id="installing-aws-cli-on-ubuntu">Installing AWS CLI on Ubuntu</h2>
+<p>AWS CLI is required to make sure Terraform works properly.</p>
+<ol>
+  <li>Download AWS CLI.
+<code class="language-plaintext highlighter-rouge">curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip"</code></li>
+  <li>Unzip the installer.
+<code class="language-plaintext highlighter-rouge">unzip awscliv2.zip</code></li>
+  <li>Install AWS CLI.
+<code class="language-plaintext highlighter-rouge">sudo ./aws/install</code></li>
+  <li>Verify AWS CLI was installed.
+<code class="language-plaintext highlighter-rouge">aws --version</code></li>
+  <li>Configure AWS CLI with your AWS Access Key ID and Secret Access Key.
+<code class="language-plaintext highlighter-rouge">aws configure</code></li>
+</ol>
+
+<h2 id="creating-the-terraform-configuration">Creating the Terraform configuration</h2>
+<ol>
+  <li>Create new directory for our configuration file.
+<code class="language-plaintext highlighter-rouge">mkdir FOLDER_NAME_HERE</code></li>
+  <li>Change into the newly created directory.
+<code class="language-plaintext highlighter-rouge">cd terraform</code></li>
+  <li>Create a new file and edit it.
+<code class="language-plaintext highlighter-rouge">nano config.tf</code></li>
+  <li>Copy the below code into the config.tf file.
+<img src="../assets/tf.png" alt="Code block" /></li>
+  <li>Initialize the directory where the config.tf file is located.
+<code class="language-plaintext highlighter-rouge">terraform init</code></li>
+  <li>Format the config file for readability.
+<code class="language-plaintext highlighter-rouge">terraform fmt</code></li>
+  <li>Generate an execution plan to preview what actions will be taken to create your infrastructure.
+<code class="language-plaintext highlighter-rouge">terraform apply</code></li>
+  <li>Type “yes” to continue with creating the infrastructure.</li>
+  <li></li>
+</ol>
+:ET
