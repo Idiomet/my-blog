@@ -1,3 +1,0 @@
-I"°<h2 id="intro-on-terraform">Intro on Terraform</h2>
-<p>Let me give you a brief introduction on Terraform and then later on I will give over how to automate the deployment of two AWS servers using Terraform. Terraform is a free and open-source tool that allows you to automate and manage infrastructure such as web servers or database servers with different cloud providers. These providers include AWS, Azure, and Google Cloud.</p>
-:ET

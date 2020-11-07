@@ -1,0 +1,13 @@
+I"<h2 id="intro-on-aws-cli">Intro on AWS CLI</h2>
+<p>In today’s blog post, I will be going over the AWS Command Line Interface (CLI). The AWS CLI can be a faster alternative to utilizing the different services that AWS has to offer, when compared to using the browser-based AWS Management Console. What’s great about the AWS CLI is that it offers flexibility of running different commands through Linux shells, Windows command line, and running remote commands through SSH. Every single function that’s available in the AWS Management Console is also available to be used in the CLI.</p>
+
+<h2 id="installing-aws-cli-on-windows">Installing AWS CLI on Windows</h2>
+<ol>
+  <li>Download the <a href="https://awscli.amazonaws.com/AWSCLIV2.msi">AWS Installer</a> for Windows.</li>
+  <li>Follow the instructions until you finish installing the program.</li>
+  <li>To verify if the installation was successful you can run the following command:
+<code class="language-plaintext highlighter-rouge">aws --version</code>
+The command</li>
+  <li></li>
+</ol>
+:ET

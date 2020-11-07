@@ -1,0 +1,3 @@
+I"P<h2 id="intro-on-aws-cli">Intro on AWS CLI</h2>
+<p>In today’s blog post, I will be going over the AWS Command Line Interface (CLI). The AWS CLI can be a faster alternative to utilizing the different services that AWS has to offer, when compared to using the browser-based AWS Management Console. What’s great about the AWS CLI is that it offers flexibility of running different commands through Linux shells, Windows command line, and running remote commands through SSH. Every single function that’s available in the AWS Management Console is also available to be used in the CLI.</p>
+:ET
