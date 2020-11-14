@@ -1,0 +1,25 @@
+I"�<h2 id="how-to-setup-a-ftp-server-on-an-ec2-instance">How to setup a FTP server on an EC2 Instance</h2>
+<p>In today’s blog post, I’m going to be going over how to install an FTP server on an AWS EC2 instance and also open the port needed for FTP access which is port 21. But first, let me give you a brief introduction on what FTP is. FTP stands for File Transfer Protocol and it is used for downloading and uploading files between computers. But one huge security flaw of FTP, is that everything transmitted including the content and credentials is not encrypted. So, anybody with a packet sniffer can easily see private information that’s transmitted using FTP.</p>
+
+<h2 id="launch-aws-ec2-instance">Launch AWS EC2 Instance</h2>
+<ol>
+  <li>Login to your EC2 Dashboard in AWS.</li>
+  <li>Launch a Ubuntu 18.04 64-bit x86 EC2 instance.</li>
+  <li>For the instance type, choose t2.micro.</li>
+  <li>Skip over to the “Configure Security Group” section.</li>
+  <li>Click “Add Rule”.</li>
+  <li>For the Type, select “Custom TCP Rule”.</li>
+  <li>For Port Range, enter “21”.</li>
+  <li>For Source, select “My IP”.</li>
+  <li>Click “Review and Launch”.</li>
+  <li>Click “Launch”.</li>
+</ol>
+
+<h2 id="setting-up-vsftpd">Setting up vsftpd</h2>
+<p>Now, we will be setting up vsftpd in the Ubuntu EC2 instance.</p>
+<ol>
+  <li>SSH into your EC2 instance.</li>
+  <li>Install the vsftpd daemon.
+<code class="language-plaintext highlighter-rouge">sudo apt install vsftpd</code></li>
+</ol>
+:ET
