@@ -1,0 +1,3 @@
+I"¨<h2 id="how-to-setup-a-ssh-server-on-an-ec2-instance">How to setup a SSH server on an EC2 Instance</h2>
+<p>In todayâ€™s blog post, I will be going over how to install an OpenSSH server on an Ubuntu EC2 instance from AWS. First off, OpenSSH is an open-source set of utilities based on the Secure Shell protocol. These utilities include secure copy, secure file transfer protocol, secure shell, and many others used for secure and encrypted access between two computers. OpenSSH encrypts all traffic to prevent any eavesdropping, connection hijacking, and other security attacks. It also has several authentication methods and different options to configure to suit your needs.</p>
+:ET

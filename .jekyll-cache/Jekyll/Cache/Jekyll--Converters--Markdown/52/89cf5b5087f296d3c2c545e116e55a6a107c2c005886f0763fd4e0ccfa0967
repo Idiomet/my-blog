@@ -1,3 +1,0 @@
-I"<h2 id="how-to-setup-a-ftp-server-on-an-ec2-instance">How to setup a FTP server on an EC2 Instance</h2>
-<p>In today’s blog post, I’m going to be going over how to install an FTP server on an AWS EC2 instance and also open the port needed for FTP access which is port 21. But first, let me give you a brief introduction on what FTP is. FTP stands for File Transfer Protocol and it is used for downloading and uploading files between computers. But one huge security flaw of FTP, is that everything transmitted including the content and credentials is not encrypted. So, anybody with a packet sniffer can easily see private information that’s transmitted using FTP. As a result, I will also be going over how to setup SSL in the FTP server for better security.</p>
-:ET

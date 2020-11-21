@@ -1,0 +1,37 @@
+I"=<h2 id="how-to-setup-a-ssh-server-on-an-ec2-instance">How to setup a SSH server on an EC2 Instance</h2>
+<p>In today’s blog post, I will be going over how to install an OpenSSH server on an Ubuntu EC2 instance from AWS. First off, OpenSSH is an open-source set of utilities based on the Secure Shell protocol. These utilities include secure copy, secure file transfer protocol, secure shell, and many others used for secure and encrypted access between two computers. It encrypts all traffic to prevent any eavesdropping, connection hijacking, and other security attacks. It also has several authentication methods and different options to configure to suit your needs.</p>
+
+<h2 id="launch-aws-ec2-instance">Launch AWS EC2 Instance</h2>
+<ol>
+  <li>Login to your EC2 Dashboard in AWS.</li>
+  <li>Launch a Ubuntu 18.04 64-bit x86 EC2 instance.</li>
+  <li>For the instance type, choose t2.micro.</li>
+  <li>Skip over to the “Configure Security Group” section.</li>
+  <li>The rule for SSH should already be created for you by default.</li>
+  <li>But, let’s make sure to change the Source to “My IP” only for better security practices. Ideally, you would input any other known IP addresses that need to access this SSH server.</li>
+  <li>Click “Review and Launch”.</li>
+  <li>Click “Launch”.</li>
+</ol>
+
+<h2 id="setting-up-the-openssh-server">Setting up the OpenSSH Server</h2>
+<ol>
+  <li>Now let’s connect to the EC2 instance that we just created via SSH.</li>
+  <li>Run the following command to update the package list.
+<code class="language-plaintext highlighter-rouge">sudo apt-get update</code></li>
+  <li>Once connected, run the following command to install the OpenSSH server, if it’s not already installed.
+<code class="language-plaintext highlighter-rouge">sudo apt install openssh-server</code></li>
+</ol>
+
+<h2 id="connecting-to-the-openssh-server">Connecting to the OpenSSH Server</h2>
+<ol>
+  <li>On your client host, run the following command to install the OpenSSH client.
+<code class="language-plaintext highlighter-rouge">sudo apt install openssh-client</code></li>
+  <li>Now, you can do a variety of actions securely such as securely transferring files between computers using SFTP.
+<code class="language-plaintext highlighter-rouge">sftp -i "KEYPAIR_NAME_HERE.pem" USERNAME_HERE@HOSTNAME_HERE</code>
+Once connected via sftp, you would then run any regular ftp commands.</li>
+  <li>Then, you can also the scp command to securely copy files between computers. Here is the syntax for that command.
+<code class="language-plaintext highlighter-rouge">scp [OPTION] [user@]SRC_HOST:]file1 [user@]DEST_HOST:]file2</code></li>
+  <li>Then, finally you can securely log into a remote computer and execute commands via shell.
+<code class="language-plaintext highlighter-rouge">ssh -i "KEYPAIR_NAME_HERE.pem" USERNAME_HERE@HOSTNAME_HERE</code></li>
+</ol>
+:ET
