@@ -1,0 +1,25 @@
+I"Y<h2 id="using-the-fetch-apis-post-method">Using the Fetch API’s POST Method</h2>
+<p>Compared to retrieving data from a specified URL while using the GET method, the POST method allows you to send data to a specified URL. This data can be form input data that the server will process and return a result based on the data that was sent.</p>
+
+<h3 id="post-method-example">POST Method Example</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">postData</span><span class="p">(</span><span class="nx">url</span> <span class="o">=</span> <span class="dl">''</span><span class="p">,</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">multipart/form-data</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="na">body</span><span class="p">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+  <span class="p">});</span>
+  <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">postData</span><span class="p">(</span><span class="dl">'</span><span class="s1">processFormData.html</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Joshua Castillo</span><span class="dl">"</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Above is an example of of the Fetch API being used to POST data to the processFormData.html page. The data that is being sent is the name, “Joshua Castillo”. We need to make sure that the method of POST is specified as an option in the Fetch API or else no data will be sent. Next, we’re including a Content Type header which specifies the type of content that is being sent, in this case it is form data that is being sent. Next, we are converting the body into a JSON string. Finally, we will be printing the result of the POST request to the console so we can get an idea of what’s going on.</p>
+
+<p>One great benefit to using the POST method is that there is no restriction on the data size that is being sent. Another benefit is that it can be used to send ASCII data as well as binary data. And the last benefit is that you can use it to send sensitive data as the data is never cached or stored in the browser history.</p>
+:ET

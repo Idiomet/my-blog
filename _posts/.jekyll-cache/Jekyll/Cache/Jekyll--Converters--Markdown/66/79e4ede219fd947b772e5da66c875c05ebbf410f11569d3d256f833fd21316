@@ -1,0 +1,61 @@
+I"�<h2 id="configuring-tailwind">Configuring Tailwind</h2>
+
+<p>The best thing about Tailwind is that it’s developed with customizability in mind. You are able to customize your webpage to how you exactly envisioned it. One file that should be modified to help you with your customizations is the <em>tailwind.config.js</em> file. This file allows you to customize different aspects of your page such as the default colors, fonts, and spacing to be used throughout your page.</p>
+
+<h3 id="creating-the-config-file">Creating the Config File</h3>
+<p>First, we need to create the Tailwind config file, so run this command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">npx tailwindcss init</code></p>
+
+<p>This should automatically create a <em>tailwind_config.js</em> file with the following template:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// tailwind.config.js
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+</code></pre></div></div>
+
+<h3 id="theme-configuration">Theme Configuration</h3>
+<p>The most important section that we want to modify is the theme section. In this section, we can add default colors, fonts, and spacing among other items.</p>
+
+<p>Here’s an example of the custom screen configuration that I created for our group project.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    screens: {
+      'sm': '640px',
+      // =&gt; @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // =&gt; @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // =&gt; @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // =&gt; @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // =&gt; @media (min-width: 1536px) { ... }
+    },
+</code></pre></div></div>
+<p>Each screen “sm”, “md”, and “lg” correspond to a breakpoint, which allows for responsive design. Here you can set your own breakpoints to target specific device widths in pixel values. For example, if the device width is 640 pixels, then change the font size to 12 pixels.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    extend: {
+      fontFamily: {
+        hind: "Hind",
+        montserrat: "Montserrat"
+      },
+      colors: {
+        primary: '#D22030',
+        secondary: '#6D7275'
+      }
+    },
+</code></pre></div></div>
+<p>The above code block showcases the font family and colors that I configured for our group project. The primary font that we selected is the Montserrat font and the secondary font that we selected is the Hind font. Next, the primary color that we selected is <em>#D22030</em> which is a red color from CSUN’s official color palette. Then, the secondary color that we selected is <em>#6D7275</em> which is a gray color from CSUN’s official color palette.</p>
+
+<p>Finally, after everything is configured to your liking, all you need to do is to run PostCSS and it’ll automatically include those config values into your CSS classes for later use!</p>
+:ET

@@ -1,0 +1,33 @@
+I"�<h2 id="responsive-web-design">Responsive Web Design</h2>
+<p>As part of the frontend developer role in my team, one of the requirements of the website is to develop a responsive website. A responsive website is a website that looks good on both mobile and desktop devices. So, if you were to visit the website on a mobile device, you would have the same user experience as visiting the website on a desktop device.</p>
+
+<p>When I was first creating the website for my team I was developing a website that was not responsive at all, because I was using the CSS code provided from Figma for each design element. But, the problem with this is that Figma uses absolute units instead of relative units for it’s CSS code. So while I was developing the website, I noticed that the whole website was being pushed to the left and it wasn’t in the center. The reason why this was happening was because in Figma, the frame resolution was set to 1440 x 1024, but the resolution of my computer is 1920 x 1080. So, because the resolution of Figma and the resolution of my computer is different, the website was being displayed as if it was in 1440 x 1024 resolution. So, now I’ve redesigned the website with responsive web design techniques and I’ll be going over some of those techniques next.</p>
+
+<h3 id="setting-the-viewport-width">Setting the Viewport Width</h3>
+<p>Setting the viewport is the first thing you should do when developing a responsive website. What this does, is it allows the page to match the width of the device in pixels and allows it to match various screen sizes.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+<p>Copy and paste the above code in between your &lt;head&gt; tags to set the viewport width.</p>
+
+<h3 id="scaling-images-properly">Scaling Images Properly</h3>
+<p>Sometimes on websites you will notice that images will get smaller when the resolution is smaller. To fix this, we can set the max width to 100% and now images will be scaled properly.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">img</span> <span class="p">{</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>  
+</code></pre></div></div>
+<p>Copy and paste the above code so that you can target all images and set the max width to 100%.</p>
+
+<h3 id="flexbox">Flexbox</h3>
+<p>One useful technique for making sure your layout is responsive to both mobile and desktop devices is placing your HTML elements in a flexbox. Flexbox allows you to place items in a row and set different spacing properties for each item so that it looks even. And, when you change the browser width, the box will automatically flex and change to fit the items without needing a horizontal scrollbar. One very useful application of flexbox is for navigation bars, which I used for my team’s navigation bar.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>  
+</code></pre></div></div>
+
+<p>The code above will target all divs and change it to a flexbox.</p>
+
+<p>Now you should have the basic knowledge to create a beautiful website that will look similar on mobile and desktop devices!</p>
+:ET

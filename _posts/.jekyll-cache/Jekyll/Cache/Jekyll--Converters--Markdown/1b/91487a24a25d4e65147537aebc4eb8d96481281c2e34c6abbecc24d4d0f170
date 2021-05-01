@@ -1,0 +1,19 @@
+I",<h2 id="sending-http-requests-via-fetch-api">Sending HTTP Requests via Fetch API</h2>
+<p>Ever had the need to send an HTTP request to retrieve data from a website or send data to a website? Well, all of this can be done using the Fetch API. In the past, this was done using XMLHttpRequest, but Fetch is a better API to use instead because it doesn’t reject the request when it encounters an HTTP error status.</p>
+
+<h3 id="fetching-from-csun-metalab-api-example">Fetching from CSUN Metalab API Example</h3>
+<p>I’m going to show you an example of fetching latitude and longitude coordinates  from the CSUN Metalab Waldo API. We will ping the Metalab API and it will return an Object that has properties that we can access.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.metalab.csun.edu/waldo/1.0/rooms?room=JD1600</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">latitude</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">latitude</span>
+    <span class="kd">var</span> <span class="nx">longitude</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">rooms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">longitude</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">latitude</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">longitude</span><span class="p">)</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+<p>The first line of code initiates the request to the Metalab API. The second line of code processes the response into a JSON object. Then, the third line of code will print out the object data that the Metalab API provides us. The fourth line of code stores the latitude value found in the object into the latitude variable. The fifth line of code stores the longitude value found in the object into the longitude variable. Then, the last two lines of code will print out both of those variables in the console.</p>
+
+<p>Now, from here you can take it a step further and use the Google Maps API to create a custom map of CSUN’s classroom locations using the provided latitude and longitude coordinates of any room!</p>
+:ET

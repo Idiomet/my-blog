@@ -1,0 +1,38 @@
+I"�
+<h2 id="creating-components-and-custom-classes-using-tailwind">Creating Components and Custom Classes using Tailwind</h2>
+
+<p>Speed and customizability are two of the most important concepts of the Tailwind CSS framework. Today, I will be going over two of those concepts. The first concept, speed, applies to the ability to create reusable CSS components, which allows for quick and easy duplication of CSS styles. The second concept, customizability, applies to the ability to create custom CSS classes if some of Tailwind’s built in utility classes are not up to your standards.</p>
+
+<h3 id="creating-reusable-css-components">Creating Reusable CSS Components</h3>
+
+<p>Often times, with buttons you have to reuse the same CSS styles for each button on your page, so that all the buttons look consistent. Instead of having to write out the same CSS classes for every single button, you can create a reusable CSS component of that button’s styles. I’ll be going over how to create a component for a button with certain styles that I want to be replicated.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@layer components {
+  .dash-btn {
+    @apply font-hind font-medium text-base text-center bg-primary text-white rounded-lg w-max h-10 px-3;
+  }
+</code></pre></div></div>
+
+<ol>
+  <li>Within your Tailwind CSS file, add a @layer components object.</li>
+  <li>And within that object, include the name of your component.</li>
+  <li>Then create an object and include @apply and the classes that you want to be applied to that component.</li>
+</ol>
+
+<p>For example, the CSS styles that I applied were Hind font, medium font weight, 16px font size, center align text, primary background color, white text color, rounded button corners, max width, 10 px height, and padding along the x axis.</p>
+
+<p>Now, whenever I include the class <em>dash-btn</em>, Tailwind will automatically apply the styles above to that button element.</p>
+
+<h3 id="creating-custom-css-classes">Creating Custom CSS Classes</h3>
+<p>Sometimes, you don’t want to use the classes that Tailwind provides, and you want to use your own classes. Luckily, Tailwind allows you to do just that pretty easily!</p>
+
+<p>Let’s say that we want to set the width of an element to 262px, it can be done with the following code:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@layer utilities {
+  .w-custom {
+    width: 262px;
+  }
+}
+</code></pre></div></div>
+
+<p>Now, for any element if we apply the class <em>w-custom</em>, that element will be a width of 262px. With all that said, you can see the true power of using components and custom classes to speed up and customize your workflow.</p>
+:ET
